@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  margin: 0 auto; /* Center container on the page */
+  width: 50%; /* Adjust as needed for the overall container */
+  max-width: 768px; /* Example max-width to prevent the container from getting too large */
+}
+
+.container img {
+  width: 100%; /* Ensure the image scales with its container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.text-background {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%; /* Adjust based on desired width, can also use vw for viewport-relative sizing */
+  min-width: 300px; /* Prevents the text background from becoming too small */
+  max-width: 90%; /* Limits the maximum width relative to the container */
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clipped-text {
+  font-size: 5rem;
+  font-weight: bold;
+  color: transparent;
+  background-image: url("https://images.pexels.com/photos/73873/star-clusters-rosette-nebula-star-galaxies-73873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-align: center; /* Ensures text is centered horizontally */
+  width: auto; /* Let the text size dictate the width */
+  background-position: center; /* Adjust this to change which part of the image shows through the text */
+  background-size: cover; /* Ensure the background covers the text area */
+}
+
+@media (max-width: 1024px) {
+  .clipped-text {
+    font-size: 3.8rem; /* Smaller text on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .clipped-text {
+    font-size: 3rem; /* Smaller text on smaller screens */
+  }
+}
